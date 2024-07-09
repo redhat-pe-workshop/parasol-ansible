@@ -2,3 +2,6 @@
 
 - name: Install ODF
   ansible.builtin.include_tasks: openshift_data_foundation.yml
+
+- name: Install ACM
+  ansible.builtin.include_tasks: openshift_acm.yml

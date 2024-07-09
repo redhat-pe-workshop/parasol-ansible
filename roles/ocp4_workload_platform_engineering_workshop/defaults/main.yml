@@ -3,7 +3,19 @@ ocp_username: opentlc-mgr
 silent: false
 
 # -------------------------------------------------------------------
-# OpenShift Data Foundations Operator
+# OpenShift Variables
+# -------------------------------------------------------------------
+master_instance_count: 3
+
+# -------------------------------------------------------------------
+# OpenShift Data Foundations
 # -------------------------------------------------------------------
 ocp4_workload_platform_engineering_workshop_odf_channel: stable-4.15
 ocp4_workload_platform_engineering_workshop_odf_catalogsource_setup: false
+
+# -------------------------------------------------------------------
+# Workload: ocp4_workload_rhacm
+# -------------------------------------------------------------------
+
+ocp4_workload_platform_engineering_workshop_rhacm_acm_channel: "release-2.10"
+ocp4_workload_platform_engineering_workshop_rhacm_use_catalog_snapshot: false

@@ -1,0 +1,8 @@
+---
+
+- name: Install OpenShift ACM
+  ansible.builtin.include_role:
+    name: ocp4_workload_rhacm
+  vars:
+    ocp4_workload_rhacm_acm_channel: "{{ ocp4_workload_platform_engineering_workshop_rhacm_acm_channel }}"
+    ocp4_workload_rhacm_use_catalog_snapshot: "{{ ocp4_workload_platform_engineering_workshop_rhacm_use_catalog_snapshot }}"
