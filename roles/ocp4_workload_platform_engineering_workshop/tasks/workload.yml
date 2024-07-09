@@ -1,1 +1,4 @@
 ---
+
+- name: Install ODF
+  ansible.builtin.include_tasks: openshift_data_foundation.yml

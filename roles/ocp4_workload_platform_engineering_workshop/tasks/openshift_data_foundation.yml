@@ -1,0 +1,8 @@
+---
+
+- name: Install OpenShift Data Foundation
+  ansible.builtin.include_role:
+    name: ocp4_workload_openshift_data_foundation
+  vars:
+    ocp4_workload_openshift_data_foundation_channel: "{{ ocp4_workload_platform_engineering_workshop_odf_channel }}"
+    ocp4_workload_openshift_data_foundation_catalogsource_setup: "{{ ocp4_workload_platform_engineering_workshop_odf_catalogsource_setup }}"
