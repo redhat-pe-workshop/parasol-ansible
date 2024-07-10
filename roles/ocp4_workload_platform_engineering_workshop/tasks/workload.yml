@@ -8,3 +8,6 @@
 
 - name: Install RHDH Bootstrap
   ansible.builtin.include_tasks: redhat_developer_hub_bootstrap.yml
+
+- name: Install Trusted Artifact Signer
+  ansible.builtin.include_tasks: trusted_artifact_signer.yml
