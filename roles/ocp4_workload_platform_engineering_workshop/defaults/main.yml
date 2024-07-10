@@ -1,6 +1,7 @@
 become_override: false
 ocp_username: opentlc-mgr
 silent: false
+guid: pew
 
 # -------------------------------------------------------------------
 # OpenShift Variables
@@ -14,8 +15,23 @@ ocp4_workload_platform_engineering_workshop_odf_channel: stable-4.15
 ocp4_workload_platform_engineering_workshop_odf_catalogsource_setup: false
 
 # -------------------------------------------------------------------
-# Workload: ocp4_workload_rhacm
+# Workload: Red Hat Advanced Cluster management
 # -------------------------------------------------------------------
 
 ocp4_workload_platform_engineering_workshop_rhacm_acm_channel: "release-2.10"
 ocp4_workload_platform_engineering_workshop_rhacm_use_catalog_snapshot: false
+
+# -------------------------------------------------------------------
+# Workload: RHDH Bootstrap
+# -------------------------------------------------------------------
+ocp4_workload_platform_engineering_workshop_rhdh_bootstrap_repo: https://github.com/btison/janus-idp-bootstrap.git
+ocp4_workload_platform_engineering_workshop_rhdh_bootstrap_agnosticg_repo: https://github.com/btison/agnosticg.git
+
+ocp4_workload_platform_engineering_workshop_quay_operator_namespace: quay-registry
+ocp4_workload_platform_engineering_workshop_quay_operator_catalogsource_namespace: quay-registry
+ocp4_workload_platform_engineering_workshop_quay_operator_channel: stable-3.11
+ocp4_workload_platform_engineering_workshop_quay_operator_starting_csv: quay-operator.v3.11.1
+ocp4_workload_platform_engineering_workshop_quay_operator_use_catalog_snapshot: false
+ocp4_workload_platform_engineering_workshop_quay_operator_catalogsource_name: redhat-operators-snapshot-quay
+ocp4_workload_platform_engineering_workshop_quay_operator_catalog_snapshot_image: quay.io/gpte-devops-automation/olm_snapshot_redhat_catalog
+ocp4_workload_platform_engineering_workshop_quay_operator_catalog_snapshot_image_tag: v4.12_2023_07_17

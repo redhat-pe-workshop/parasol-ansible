@@ -22,6 +22,10 @@
   ansible.builtin.set_fact:
     r_openshift_subdomain: "{{ r_openshift_ingress_controller.resources[0].status.domain }}"
 
+- name: Common password
+  ansible.builtin.set_fact:
+    common_password: "{{ lookup('ansible.builtin.password', '/tmp/passwordfile', chars=['ascii_letters']) }}"
+
 # Leave these as the last tasks in the playbook
 # ---------------------------------------------
 
