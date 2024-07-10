@@ -2,6 +2,7 @@ become_override: false
 ocp_username: opentlc-mgr
 silent: false
 guid: pew
+num_users: 5
 
 # -------------------------------------------------------------------
 # OpenShift Variables
@@ -72,3 +73,45 @@ ocp4_workload_platform_engineering_workshop_pipelines_csv_nameprefix: openshift-
 ocp4_workload_platform_engineering_workshop_pipelines_use_catalog_snapshot: false
 ocp4_workload_platform_engineering_workshop_pipelines_catalog_snapshot_image: quay.io/gpte-devops-automation/olm_snapshot_redhat_catalog
 ocp4_workload_platform_engineering_workshop_pipelines_catalog_snapshot_image_tag: v4.13_2023_11_20
+
+# -------------------------------------------------------------------
+# GitLab
+# -------------------------------------------------------------------
+ocp4_workload_platform_engineering_workshop_gitlab_gitops_type: argocd
+ocp4_workload_platform_engineering_workshop_gitlab_config_email_display_name: Janus Admin
+ocp4_workload_platform_engineering_workshop_gitlab_config_email_reply_to: "noreply@redhat.com"
+ocp4_workload_platform_engineering_workshop_gitlab_config_smtp_enabled: "false"
+ocp4_workload_platform_engineering_workshop_gitlab_config_smtp_domain: "example.com"
+ocp4_workload_platform_engineering_workshop_gitlab_config_smtp_port: "587"
+ocp4_workload_platform_engineering_workshop_gitlab_config_smtp_user: "gitlab"
+ocp4_workload_platform_engineering_workshop_gitlab_config_smtp_password: "gitlab"
+ocp4_workload_platform_engineering_workshop_gitlab_config_ssh_port: "22"
+ocp4_workload_platform_engineering_workshop_gitlab_config_rootPassword: "{{ common_password }}"
+ocp4_workload_platform_engineering_workshop_gitlab_config_https: "true"
+ocp4_workload_platform_engineering_workshop_gitlab_config_root_email: "root@opentlc.com"
+ocp4_workload_platform_engineering_workshop_gitlab_config_keybase_db: "0123456789"
+ocp4_workload_platform_engineering_workshop_gitlab_config_keybase_otp: "0123456789"
+ocp4_workload_platform_engineering_workshop_gitlab_config_keybase_secret: "0123456789"
+
+ocp4_workload_platform_engineering_workshop_gitlab_db_user_name: gitlab
+ocp4_workload_platform_engineering_workshop_gitlab_db_password: passw0rd
+ocp4_workload_platform_engineering_workshop_gitlab_db_name: gitlab_production
+
+ocp4_workload_platform_engineering_workshop_gitlab_gitops_repo: https://github.com/btison/agnosticg.git
+
+ocp4_workload_platform_engineering_workshop_gitlab_import_repos:
+  - name: rhdh
+    repo:
+      - name: trusted-application-pipeline-templates
+        url: https://github.com/btison/trusted-application-pipeline-templates.git
+  - name: summit-lab
+    repo:
+      - name: backstage-workshop
+        url: https://github.com/btison/backstage-workshop.git
+  - name: gitops
+    repo:
+      - name: janus-idp-gitops
+        url: https://github.com/btison/janus-idp-gitops.git
+
+ocp4_workload_platform_engineering_workshop_gitlab_users_count: "{{ num_users | default(1) }}"
+ocp4_workload_platform_engineering_workshop_gitlab_users_password: "{{ common_password }}"
