@@ -17,3 +17,6 @@
 
 - name: Install Gitlab
   ansible.builtin.include_tasks: gitlab.yml
+
+- name: Install SonarQube
+  ansible.builtin.include_tasks: sonarqube.yml
