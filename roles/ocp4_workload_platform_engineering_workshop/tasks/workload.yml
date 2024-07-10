@@ -20,3 +20,6 @@
 
 - name: Install SonarQube
   ansible.builtin.include_tasks: sonarqube.yml
+
+- name: Install Trusted Profile Analyzer
+  ansible.builtin.include_tasks: trusted_profile_analyzer.yml
