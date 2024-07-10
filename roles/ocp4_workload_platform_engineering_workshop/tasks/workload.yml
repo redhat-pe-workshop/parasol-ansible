@@ -11,3 +11,6 @@
 
 - name: Install Trusted Artifact Signer
   ansible.builtin.include_tasks: trusted_artifact_signer.yml
+
+- name: Install OpenShift Pipelines
+  ansible.builtin.include_tasks: openshift_pipelines.yml

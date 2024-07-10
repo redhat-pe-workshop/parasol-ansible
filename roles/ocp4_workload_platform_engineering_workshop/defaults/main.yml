@@ -63,3 +63,12 @@ ocp4_workload_platform_engineering_workshop_tas_rhtas_config:
       memory: 256Mi
     requests:
       memory: 128Mi
+
+# ---------------------------------------------------------
+# Workload: OpenShift Pipelines
+# ---------------------------------------------------------
+ocp4_workload_platform_engineering_workshop_pipelines_channel: pipelines-1.15
+ocp4_workload_platform_engineering_workshop_pipelines_csv_nameprefix: openshift-pipelines-operator-rh
+ocp4_workload_platform_engineering_workshop_pipelines_use_catalog_snapshot: false
+ocp4_workload_platform_engineering_workshop_pipelines_catalog_snapshot_image: quay.io/gpte-devops-automation/olm_snapshot_redhat_catalog
+ocp4_workload_platform_engineering_workshop_pipelines_catalog_snapshot_image_tag: v4.13_2023_11_20
