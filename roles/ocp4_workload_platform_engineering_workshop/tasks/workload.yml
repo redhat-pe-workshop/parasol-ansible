@@ -26,3 +26,6 @@
 
 - name: Install Trusted Profile Analyzer
   ansible.builtin.include_tasks: trusted_profile_analyzer.yml
+
+- name: Install Trusted Application Pipeline
+  ansible.builtin.include_tasks: trusted_application_pipeline.yml
