@@ -135,3 +135,10 @@ ocp4_workload_platform_engineering_workshop_tpa_install_repo_url: https://github
 ocp4_workload_platform_engineering_workshop_tpa_helm_chart_repo: https://charts.openshift.io/
 ocp4_workload_platform_engineering_workshop_tpa_helm_chart_name: openshift-helm-charts/redhat-trusted-profile-analyzer
 ocp4_workload_platform_engineering_workshop_tpa_helm_chart_version: "0.0.4"
+
+# -------------------------------------------------------------------
+# Workload: Advanced Cluster Security
+# -------------------------------------------------------------------
+ocp4_workload_platform_engineering_workshop_rhacs_install_operator_channel: "rhacs-4.4"
+ocp4_workload_platform_engineering_workshop_rhacs_install_operator_starting_csv: "rhacs-operator.v4.4.0"
+ocp4_workload_platform_engineering_workshop_rhacs_install_operator_use_catalog_snapshot: false

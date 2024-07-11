@@ -1,0 +1,10 @@
+---
+
+- name: Install OpenShift ACS
+  ansible.builtin.include_role:
+    name: ocp4_workload_rhacs
+  vars:
+    ocp4_workload_rhacs_install_operator_channel: "{{ ocp4_workload_platform_engineering_workshop_rhacs_install_operator_channel }}"
+    ocp4_workload_rhacs_install_operator_starting_csv: "{{ ocp4_workload_platform_engineering_workshop_rhacs_install_operator_starting_csv }}"
+    ocp4_workload_rhacs_install_operator_use_catalog_snapshot: "{{ ocp4_workload_platform_engineering_workshop_rhacs_install_operator_use_catalog_snapshot }}"
+    ocp4_workload_rhacs_central_admin_password: "{{ common_password }}"
