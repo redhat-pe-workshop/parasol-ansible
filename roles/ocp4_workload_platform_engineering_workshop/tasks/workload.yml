@@ -1,7 +1,7 @@
 ---
 
-- name: Install ODF
-  ansible.builtin.include_tasks: openshift_data_foundation.yml
+- name: Install Noobaa
+  ansible.builtin.include_tasks: noobaa.yml
 
 - name: Install ACM
   ansible.builtin.include_tasks: openshift_acm.yml
