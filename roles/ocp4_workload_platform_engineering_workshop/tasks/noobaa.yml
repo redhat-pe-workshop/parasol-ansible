@@ -25,3 +25,8 @@
     install_operator_catalogsource_setup: "{{ ocp4_workload_platform_engineering_workshop_noobaa_operator_use_catalog_snapshot }}"
     install_operator_catalog: "{{ ocp4_workload_platform_engineering_workshop_noobaa_operator_catalog }}"
     install_operator_starting_csv: "{{ ocp4_workload_platform_engineering_workshop_noobaa_operator_starting_csv }}"
+
+- name: Create NooBaa instance
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'noobaa/noobaa.yaml.j2') | from_yaml }}"
