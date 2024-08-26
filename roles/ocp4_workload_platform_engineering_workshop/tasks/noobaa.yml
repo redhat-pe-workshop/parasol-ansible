@@ -26,6 +26,44 @@
     install_operator_catalog: "{{ ocp4_workload_platform_engineering_workshop_noobaa_operator_catalog }}"
     install_operator_starting_csv: "{{ ocp4_workload_platform_engineering_workshop_noobaa_operator_starting_csv }}"
 
+- name: "Get Installed CSV"
+  kubernetes.core.k8s_info:
+    api_version: operators.coreos.com/v1alpha1
+    kind: Subscription
+    name: "{{ ocp4_workload_platform_engineering_workshop_noobaa_operator_name }}"
+    namespace: "{{ ocp4_workload_platform_engineering_workshop_noobaa_operator_namespace }}"
+  register: r_noobaa_subscription
+  retries: 30
+  delay: 10
+  until:
+    - r_noobaa_subscription.resources[0].status.currentCSV is defined
+    - r_noobaa_subscription.resources[0].status.currentCSV | length > 0
+
+- name: "Wait until CSV is installed"
+  kubernetes.core.k8s_info:
+    api_version: operators.coreos.com/v1alpha1
+    kind: ClusterServiceVersion
+    name: "{{ r_noobaa_subscription.resources[0].status.currentCSV }}"
+    namespace: "{{ ocp4_workload_platform_engineering_workshop_noobaa_operator_namespace }}"
+  register: r_csv
+  retries: 60
+  delay: 30
+  until:
+  - r_csv.resources[0].status.phase is defined
+  - r_csv.resources[0].status.phase | length > 0
+  - r_csv.resources[0].status.phase == "Succeeded"
+
+- name: "Wait until Noobaa CRD is installed"
+  kubernetes.core.k8s_info:
+    api_version: apiextensions.k8s.io/v1
+    kind: CustomResourceDefinition
+    name: "{{ ocp4_workload_platform_engineering_workshop_noobaa_crd_name }}"
+  register: r_noobaa_crd
+  retries: 60
+  delay: 10
+  until:
+  - r_csv.resources[0].status is defined
+  
 - name: Create NooBaa instance
   kubernetes.core.k8s:
     state: present
