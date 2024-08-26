@@ -19,6 +19,13 @@ spec:
     persistence:
       persistentVolumeClaim:
         claimName: stackrox-db
+    resources:
+      requests:
+        cpu: 125m
+    db:
+      resources:
+        requests:
+          cpu: 125m
   egress:
     connectivityPolicy: Online
   scanner:
@@ -26,6 +33,9 @@ spec:
       scaling:
         autoScaling: Disabled
         replicas: 1
+      resources:
+        requests:
+          cpu: 125m
     scannerComponent: Enabled
 {% if ocp4_workload_rhacs_enable_central_scanner_v4 | bool %}
 {% if ocp4_workload_rhacs_install_operator_channel.split('-')[1] | float >= 4.4 %}
@@ -33,3 +43,7 @@ spec:
     scannerComponent: Enabled
 {% endif %}
 {% endif %}
+  sensor:
+    resources:
+      requests:
+        cpu: 125m
