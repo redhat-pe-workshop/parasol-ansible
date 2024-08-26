@@ -9,6 +9,18 @@ spec:
   components:
   - kind: postgres
     managed: true
+    overrides:
+      resources:
+        requests:
+          cpu: 125m
+          memory: 1Gi
+  - kind: clairpostgres
+    managed: true
+    overrides:
+      resources:
+        requests:
+          cpu: 125m
+          memory: 1Gi
   - kind: objectstorage
     managed: true
   - kind: redis
@@ -19,9 +31,21 @@ spec:
     managed: true
   - kind: clair
     managed: {{ ocp4_workload_quay_operator_registry_enable_clair }}
+    overrides:
+      resources:
+        requests:
+          cpu: 125m
+          memory: 1Gi
   - kind: horizontalpodautoscaler
     managed: {{ ocp4_workload_quay_operator_registry_enable_hpa }}
   - kind: mirror
     managed: {{ ocp4_workload_quay_operator_registry_enable_mirror }}
   - kind: monitoring
     managed: {{ ocp4_workload_quay_operator_registry_enable_monitoring }}
+  - kind: quay
+    managed: true
+    overrides:
+      resources:
+        requests:
+          cpu: 125m
+          memory: 1Gi
