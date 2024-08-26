@@ -151,7 +151,7 @@ ocp4_workload_platform_engineering_workshop_tpa_helm_chart_version: "0.0.4"
 # Workload: Advanced Cluster Security
 # -------------------------------------------------------------------
 ocp4_workload_platform_engineering_workshop_rhacs_install_operator_channel: "rhacs-4.4"
-ocp4_workload_platform_engineering_workshop_rhacs_install_operator_starting_csv: "rhacs-operator.v4.4.0"
+ocp4_workload_platform_engineering_workshop_rhacs_install_operator_starting_csv: ""
 ocp4_workload_platform_engineering_workshop_rhacs_install_operator_use_catalog_snapshot: false
 
 # -------------------------------------------------------------------
