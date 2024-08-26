@@ -36,8 +36,8 @@ ocp4_workload_platform_engineering_workshop_rhacm_use_catalog_snapshot: false
 # -------------------------------------------------------------------
 # Workload: RHDH Bootstrap
 # -------------------------------------------------------------------
-ocp4_workload_platform_engineering_workshop_rhdh_bootstrap_repo: https://github.com/btison/janus-idp-bootstrap.git
-ocp4_workload_platform_engineering_workshop_rhdh_bootstrap_agnosticg_repo: https://github.com/btison/agnosticg.git
+ocp4_workload_platform_engineering_workshop_rhdh_bootstrap_repo: https://github.com/redhat-pe-workshop/janus-idp-bootstrap.git
+ocp4_workload_platform_engineering_workshop_rhdh_bootstrap_agnosticg_repo: https://github.com/redhat-pe-workshop/agnosticg.git
 
 ocp4_workload_platform_engineering_workshop_quay_operator_namespace: quay-registry
 ocp4_workload_platform_engineering_workshop_quay_operator_catalogsource_namespace: quay-registry
@@ -108,21 +108,21 @@ ocp4_workload_platform_engineering_workshop_gitlab_db_user_name: gitlab
 ocp4_workload_platform_engineering_workshop_gitlab_db_password: passw0rd
 ocp4_workload_platform_engineering_workshop_gitlab_db_name: gitlab_production
 
-ocp4_workload_platform_engineering_workshop_gitlab_gitops_repo: https://github.com/btison/agnosticg.git
+ocp4_workload_platform_engineering_workshop_gitlab_gitops_repo: https://github.com/redhat-pe-workshop/agnosticg.git
 
 ocp4_workload_platform_engineering_workshop_gitlab_import_repos:
   - name: rhdh
     repo:
       - name: trusted-application-pipeline-templates
-        url: https://github.com/btison/trusted-application-pipeline-templates.git
+        url: https://github.com/redhat-pe-workshop/trusted-application-pipeline-templates.git
   - name: summit-lab
     repo:
       - name: backstage-workshop
-        url: https://github.com/btison/backstage-workshop.git
+        url: https://github.com/redhat-pe-workshop/backstage-workshop.git
   - name: gitops
     repo:
       - name: janus-idp-gitops
-        url: https://github.com/btison/janus-idp-gitops.git
+        url: https://github.com/redhat-pe-workshop/janus-idp-gitops.git
 
 ocp4_workload_platform_engineering_workshop_gitlab_users_count: "{{ num_users | default(1) }}"
 ocp4_workload_platform_engineering_workshop_gitlab_users_password: "{{ common_password }}"
@@ -157,7 +157,7 @@ ocp4_workload_platform_engineering_workshop_rhacs_install_operator_use_catalog_s
 # -------------------------------------------------------------------
 # Workload: Trusted Application Pipeline
 # -------------------------------------------------------------------
-ocp4_workload_platform_engineering_workshop_tap_janus_bootstrap_repo: https://github.com/btison/janus-idp-bootstrap.git
+ocp4_workload_platform_engineering_workshop_tap_janus_bootstrap_repo: https://github.com/redhat-pe-workshop/janus-idp-gitops.git
 ocp4_workload_platform_engineering_workshop_tap_janus_bootstrap_repo_target_revision: main
 ocp4_workload_platform_engineering_workshop_tap_backstage_gitlab_user_create: "{{ ocp4_workload_gitops_gitlab_user_create }}"
 ocp4_workload_platform_engineering_workshop_tap_backstage_gitlab_user_username: "{{ ocp4_workload_gitops_gitlab_user_username | default(omit) }}"
