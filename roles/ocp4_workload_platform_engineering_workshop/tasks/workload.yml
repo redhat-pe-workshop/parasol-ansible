@@ -3,8 +3,8 @@
 - name: Install Noobaa
   ansible.builtin.include_tasks: noobaa.yml
 
-- name: Install ACM
-  ansible.builtin.include_tasks: openshift_acm.yml
+# - name: Install ACM
+#   ansible.builtin.include_tasks: openshift_acm.yml
 
 - name: Install RHDH Bootstrap
   ansible.builtin.include_tasks: redhat_developer_hub_bootstrap.yml
