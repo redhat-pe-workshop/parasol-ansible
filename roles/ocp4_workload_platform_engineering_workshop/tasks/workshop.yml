@@ -1,0 +1,29 @@
+---
+- name: "Create user namespaces"
+  kubernetes.core.k8s:
+    state: present
+    resource_definition: "{{ lookup('template', 'parasol/namespace.yaml.j2') }}"
+  vars:
+    r_platform_engineering_workshop_namespaces:
+      - name: "{{ ocp4_workload_platform_engineering_workshop_parasol_namespace_prefix }}"
+        managedByArgo: ""
+  retries: 10
+  delay: 30
+
+- name: "Give users access to projects"
+  kubernetes.core.k8s:
+    state: present
+    resource_definition: "{{ lookup('template', 'parasol/rolebinding.yaml.j2') }}"
+  vars:
+    r_platform_engineering_workshop_bindings:
+      - namespace: "{{ ocp4_workload_platform_engineering_workshop_parasol_namespace_prefix }}"
+        role: "admin"
+  retries: 10
+  delay: 30
+
+- name: Deploy Parasol application
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'parasol/parasol-application.yaml.j2') }}"
+  vars:
+    r_platform_engineering_workshop_parasol_namespace: "{{ ocp4_workload_platform_engineering_workshop_parasol_namespace_prefix }}"

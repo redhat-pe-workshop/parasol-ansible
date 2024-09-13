@@ -1,5 +1,0 @@
----
-
-- name: Install SonarQube
-  ansible.builtin.include_role:
-    name: ocp4_workload_sonarqube

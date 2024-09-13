@@ -1,31 +1,7 @@
 ---
 
-- name: Install Noobaa
-  ansible.builtin.include_tasks: noobaa.yml
+- name: Setup Keycloak
+  ansible.builtin.include_tasks: keycloak.yml
 
-# - name: Install ACM
-#   ansible.builtin.include_tasks: openshift_acm.yml
-
-- name: Install RHDH Bootstrap
-  ansible.builtin.include_tasks: redhat_developer_hub_bootstrap.yml
-
-- name: Install Trusted Artifact Signer
-  ansible.builtin.include_tasks: trusted_artifact_signer.yml
-
-- name: Install OpenShift Pipelines
-  ansible.builtin.include_tasks: openshift_pipelines.yml
-
-- name: Install Gitlab
-  ansible.builtin.include_tasks: gitlab.yml
-
-- name: Install SonarQube
-  ansible.builtin.include_tasks: sonarqube.yml
-
-- name: Install ACS
-  ansible.builtin.include_tasks: openshift_acs.yml
-
-- name: Install Trusted Profile Analyzer
-  ansible.builtin.include_tasks: trusted_profile_analyzer.yml
-
-- name: Install Trusted Application Pipeline
-  ansible.builtin.include_tasks: trusted_application_pipeline.yml
+- name: Install Parasol
+  ansible.builtin.include_tasks: workshop.yml

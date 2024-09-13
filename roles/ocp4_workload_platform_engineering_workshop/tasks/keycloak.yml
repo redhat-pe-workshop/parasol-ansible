@@ -1,0 +1,6 @@
+---
+
+- name: Create RHBK application
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'keycloak/keycloak-application.yaml.j2') | from_yaml }}"
